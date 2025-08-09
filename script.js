@@ -31,8 +31,7 @@ const pontuacaoVitoriaFinal = document.getElementById('pontuacao-vitoria-final')
 const pontosFlutuantesContainer = document.getElementById('pontos-flutuantes-container');
 
 // --- DADOS PADRÃO DO JOGO ---
-const NIVEIS_PADRAO = [ { dica: "É uma fruta vermelha", palavra: "morango" }, { dica: "Animal que mia", palavra: "gato" }, { dica: "Usado para escrever no quadro-negro", palavra: "giz" }, { dica: "O oposto de 'baixo'", palavra: "alto" }, { dica: "Planeta onde vivemos", palavra: "terra" }, { dica: "Linguagem de programação para web", palavra: "javascript" }, { dica: "Profissional que apaga incêndios", palavra: "bombeiro" }, { dica: "Objeto usado para ver as horas", palavra: "relogio" }, { dica: "Meio de transporte sobre trilhos", palavra: "trem" }, { dica: "A cor do céu em um dia limpo", palavra: "azul" }];
-
+const NIVEIS_PADRAO = [ { dica: "Surge quando há diferença de temperatura entre dois ou mais corpos", palavra: "calor" }, { dica: "Está associada ao grau de agitação das particulas", palavra: "temperatura" }, { dica: "Aumento das dimensões de um corpo devido ao aumento de temperatura", palavra: "dilatacao" }, { dica: "Sua unidade é cal/°C", palavra: "capacidade termica" }, { dica: "O da água vale 1 cal/g°C", palavra: "calor especifico" }, { dica: "Tipo de transmição de calor propagado de partícula a partícula", palavra: "conducao" }, { dica: "Tipo de transmissão de calor que não necessita de um meio para se propagar", palavra: "radiacao" }, { dica: "Transmiçao de calor que acontece em fluidos", palavra: "conveccao" }, { dica: "Em metais ela é alta", palavra: "condutividade termica" }, { dica: "Recipiente utilizado para estudos de trocas de calor", palavra: "calorimetro" }];
 // --- VARIÁVEIS DO JOGO ---
 let niveis = [];
 let nivelAtual = 0;
@@ -302,4 +301,5 @@ window.addEventListener('keydown', (e) => {
 });
 // --- INICIALIZAÇÃO ---
 mostrarTela('tela-inicial');
+
 function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[array[i], array[j]] = [array[j], array[i]]; } return array; }
