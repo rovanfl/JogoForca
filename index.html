@@ -8,87 +8,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div id="hud-container" class="hidden">
-        <div id="timer-container">
-            <div id="timer-bar"></div>
-        </div>
-        <div id="pontuacao-container">
-            Pontos: <span id="pontuacao-display">0</span>
-            <div id="pontos-flutuantes-container"></div>
-        </div>
+        <div id="timer-container"><div id="timer-bar"></div></div>
+        <div id="pontuacao-container">Pontos: <span id="pontuacao-display">0</span><div id="pontos-flutuantes-container"></div></div>
     </div>
-
     <button id="btn-som" class="btn-global">🔊</button>
-
-    <div id="tela-inicial">
-        <header>
-            <h1>Jogo da Forca</h1>
-            <p class="subtitulo">O Desafio do Esqueleto Zombeteiro</p>
-        </header>
+    <div id="tela-inicial" class="tela">
+        <header><h1>Jogo da Forca</h1><p class="subtitulo">O Desafio do Esqueleto Zombeteiro</p></header>
         <div class="menu-botoes">
-            <button id="btn-iniciar" class="btn-menu">Iniciar Jogo</button>
-            <button id="btn-historia" class="btn-menu">História</button>
-            <button id="btn-carregar-json" class="btn-menu">Carregar Perguntas</button>
-            <button id="btn-creditos" class="btn-menu">Créditos</button>
+            <button id="btn-iniciar" class="btn-menu">Iniciar Jogo</button><button id="btn-historia" class="btn-menu">História</button><button id="btn-carregar-json" class="btn-menu">Carregar Perguntas</button><button id="btn-creditos" class="btn-menu">Créditos</button>
         </div>
-        <div class="upload-container hidden">
-            <input type="file" id="json-upload" accept=".json">
-        </div>
+        <div class="upload-container hidden"><input type="file" id="json-upload" accept=".json"></div>
     </div>
-
-    <div id="tela-jogo" class="hidden">
-        <header>
-            <h1>Jogo da Forca</h1>
-            <div id="dica-container" class="dica">Carregando dica...</div>
+    <div id="tela-jogo" class="tela hidden">
+        <header class="header-jogo">
+            <div id="dica-container" class="dica"></div>
+            <div id="palavra-revelada-header" class="palavra-revelada-animacao"></div>
         </header>
         <main>
             <div class="jogo-container">
                 <div class="forca-container">
-                    <svg height="250" width="200" class="forca"><line x1="60" y1="20" x2="140" y2="20" /><line x1="140" y1="20" x2="140" y2="50" /><line x1="60" y1="20" x2="60" y2="230" /><line x1="20" y1="230" x2="100" y2="230" /></svg>
-                    <div id="esqueleto-container" class="esqueleto"></div>
+                    <svg height="250" width="200" class="forca forca-svg"><line x1="60" y1="20" x2="140" y2="20" /><line x1="140" y1="20" x2="140" y2="50" /><line x1="60" y1="20" x2="60" y2="230" /><line x1="20" y1="230" x2="100" y2="230" /></svg>
+                    <div id="esqueleto-container"></div>
                 </div>
                 <div id="palavra-container" class="palavra"></div>
             </div>
             <div id="teclado-container" class="teclado"></div>
         </main>
     </div>
-    
-    <div id="tela-historia" class="hidden">
-        <div class="caixa-texto">
-            <h2>A História do Esqueleto</h2>
-            <p> MacGrinhos, o esqueleto, já foi um humano apaixonado por ciências. Atualmente, o que sobrou de MacGrinhos, ajuda estudantes a compreenderem alguns conceitos de ciência. A sua missão é deixar Macgrinhos feliz, mostrando que você aprendeu tudo.</p>
-            <button id="btn-voltar-historia" class="btn-menu">Voltar</button>
-        </div>
+    <div id="tela-historia" class="tela hidden">
+        <div class="caixa-texto"><h2>A História do Esqueleto</h2><p> MacGrinhos, o esqueleto, já foi um humano apaixonado por ciências. Atualmente, o que sobrou de MacGrinhos, ajuda estudantes a compreenderem alguns conceitos de ciência. A sua missão é deixar Macgrinhos feliz, mostrando que você aprendeu tudo.</p><button id="btn-voltar-historia" class="btn-menu">Voltar</button></div>
     </div>
-
-    <div id="tela-creditos" class="hidden">
-        <div class="caixa-texto">
-            <h2>Créditos</h2>
-            <p>Jogo feito por prof. Rovan Fernandes Lopes, como auxílio da IA Gemini para fins exclusivamente educacionais.</p>
-            <p>Sons e imagens retiradas da plataforma scratch, diponível em: https://scratch.mit.edu/.</p>
-            <button id="btn-voltar-creditos" class="btn-menu">Voltar</button>
-        </div>
+    <div id="tela-creditos" class="tela hidden">
+        <div class="caixa-texto"><h2>Créditos</h2><p>Jogo feito por prof. Rovan Fernandes Lopes, como auxílio da IA Gemini para fins exclusivamente educacionais</p><p>Sons e imagens retiradas da plataforma scratch, disponível em: https://scratch.mit.edu/.</p><button id="btn-voltar-creditos" class="btn-menu">Voltar</button></div>
     </div>
-
-    <div id="tela-vitoria-final" class="hidden">
-        <div class="caixa-texto">
-            <h1>VITÓRIA!</h1>
-            <p>Pontuação Final: <span id="pontuacao-vitoria-final">0</span></p>
-            <div class="esqueleto-dancando-sprite"></div>
-            <button id="btn-voltar-menu-vitoria" class="btn-menu">Voltar ao Início</button>
-        </div>
+    <div id="tela-vitoria-final" class="tela hidden">
+        <div class="caixa-texto"><h1>VITÓRIA!</h1><p>Pontuação Final:</p><span id="pontuacao-vitoria-final" class="pontuacao-final-destaque">0</span><div class="esqueleto-dancando-sprite"></div><button id="btn-voltar-menu-vitoria" class="btn-menu">Voltar ao Início</button></div>
     </div>
-
     <div id="modal-gameover" class="modal-container">
         <div class="modal">
             <h2 id="gameover-titulo">GAME OVER</h2>
             <p id="gameover-texto">A palavra era: <span id="palavra-revelada"></span></p>
-            <p>Pontuação Final: <span id="pontuacao-gameover">0</span></p>
+            <p>Pontuação Final: <span id="pontuacao-gameover" class="pontuacao-final-destaque">0</span></p>
             <button id="btn-voltar-menu-gameover" class="btn-menu">Voltar ao Início</button>
         </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
