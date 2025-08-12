@@ -8,7 +8,7 @@ const pontuacaoDisplay = document.getElementById('pontuacao-display'); const pon
 const palavraReveladaHeader = document.getElementById('palavra-revelada-header');
 
 // --- DADOS PADRÃO DO JOGO ---
-const NIVEIS_PADRAO = [ { dica: "Surge quando há diferença de temperatura entre dois ou mais corpos", palavra: "calor" }, { dica: "Está associada ao grau de agitação das partículas", palavra: "temperatura" }, { dica: "Aumento das dimensões de um corpo devido ao aumento de temperatura", palavra: "dilataçao" }, { dica: "Sua unidade é cal/°C", palavra: "capacidade termica" }, { dica: "O da água vale 1 cal/g°C", palavra: "calor especifico" }, { dica: "Tipo de transmissão de calor propagado de partícula a partícula", palavra: "conduçao" }, { dica: "Tipo de transmissão de calor que não necessita de um meio para se propagar", palavra: "radiaçao" }, { dica: "Transmissão de calor que acontece em fluidos", palavra: "convecçao" }, { dica: "Em metais ela é alta", palavra: "condutividade termica" }, { dica: "Recipiente utilizado para estudos de trocas de calor", palavra: "calorimetro" }];
+const NIVEIS_PADRAO = [ { dica: "Surge quando há diferença de temperatura entre dois ou mais corpos", palavra: "calor" }, { dica: "Está associada ao grau de agitação das partículas", palavra: "temperatura" }, { dica: "Para que seja melor aproveitado para o resfriamento, um ar condicionado deve ficar em uma possiçao mais ______ na parede", palavra: "acima" }, { dica: "Sua unidade é cal/°C", palavra: "capacidade termica" }, { dica: "O da água vale 1 cal/g°C", palavra: "calor especifico" }, { dica: "Tipo de transmissão de calor propagado de partícula a partícula", palavra: "conduçao" }, { dica: "Tipo de transmissão de calor que não necessita de um meio para se propagar", palavra: "irradiaçao" }, { dica: "Transmissão de calor que acontece em fluidos", palavra: "convecçao" }, { dica: "Em metais ela é alta", palavra: "condutividade termica" }, { dica: "Recipiente utilizado para estudos de trocas de calor", palavra: "calorimetro" }];
 // --- VARIÁVEIS DO JOGO ---
 let niveis = []; let nivelAtual = 0; let palavraSecreta = ''; let letrasCorretas = []; let erros = 0; const maxErros = 6; let timer; let tempoRestante; const TEMPO_INICIAL = 40; let pontuacaoTotal = 0; let pontosInstantaneos = 0; let somEstaAtivado = true;
 
@@ -147,3 +147,4 @@ window.addEventListener('keydown', (e) => { if (!telaJogo.classList.contains('hi
 // --- INICIALIZAÇÃO ---
 mostrarTela('tela-inicial');
 function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[array[i], array[j]] = [array[j], array[i]]; } return array; }
+
